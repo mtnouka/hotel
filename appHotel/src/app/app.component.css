@@ -1,0 +1,13 @@
+.barra-navegacao {
+  background-color: #1D9480;
+}
+
+.barra-navegacao h4 {
+  filter: invert(100%);
+}
+
+.barra-navegacao img {
+  filter: brightness(0%);
+  width: 150px;
+  height: 50px;
+}
