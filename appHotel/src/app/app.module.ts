@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { GuestModule } from './guests/guest.module';
+import { CheckinModule } from './checkins/checkin.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { GuestModule } from './guests/guest.module';
     HttpClientModule,
     CoreModule,
     GuestModule,
+    CheckinModule,
     RouterModule.forRoot([
       {
-        path: '', redirectTo: 'guests', pathMatch: 'full'
+        path: '', redirectTo: 'checkins', pathMatch: 'full'
       }
     ])
   ],
