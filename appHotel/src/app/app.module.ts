@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { GuestModule } from './guests/guest.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,10 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     HttpClientModule,
     CoreModule,
+    GuestModule,
     RouterModule.forRoot([
       {
-        path: '', redirectTo: 'checkins', pathMatch: 'full'
+        path: '', redirectTo: 'guests', pathMatch: 'full'
       }
     ])
   ],

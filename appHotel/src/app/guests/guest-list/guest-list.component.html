@@ -1,0 +1,50 @@
+<!-- Tabela com consultas de Hospede -->
+<div class="card-header form-header mt-4">
+    <label for="hospede">Consultas</label>
+</div>
+
+<form class="col-md-12 form-border">
+    <div class="group-radio">
+        <div class="row col-md-12">
+            <label>Filtrar hóspede:</label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="pesquisaHospede">Pesquisa</label>
+            <input type="text" class="form-control" id="pesquisaHospede">
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Matheus</td>
+                <td>48143263860</td>
+                <td>11942514799</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm"
+                        title="Editar o hóspede">
+                        <i class="material-icons">edit</i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm"
+                        title="Apagar o hóspede">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <button class="btn btn-primary previous-button">← Previous</button>
+        <button class="btn btn-primary next-button">Next →</button>
+    </div>
+</form>
