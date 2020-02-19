@@ -1,5 +1,5 @@
 <!-- Tabela com consultas de Hospede -->
-<div class="card-header form-header mt-4">
+<div class="card-header form-header">
     <label for="hospede">Consultas</label>
 </div>
 
@@ -11,7 +11,7 @@
 
         <div class="form-group col-md-6">
             <label for="pesquisaHospede">Pesquisa</label>
-            <input type="text" class="form-control" id="pesquisaHospede">
+            <input [(ngModel)]="filter" name="filter" class="form-control">
         </div>
     </div>
 
@@ -25,16 +25,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Matheus</td>
-                <td>48143263860</td>
-                <td>11942514799</td>
+            <tr *ngFor="let guest of filteredGuests">
+                <td>{{ guest.name }}</td>
+                <td>{{ guest.document }}</td>
+                <td>{{ guest.telephone }}</td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-sm"
+                    <button [routerLink]="['/guests/info', guest.id]" type="button" class="btn btn-primary btn-sm mr-1"
                         title="Editar o hóspede">
                         <i class="material-icons">edit</i>
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm"
+                    <button (click)="deleteById(guest.id)" type="button" class="btn btn-danger btn-sm"
                         title="Apagar o hóspede">
                         <i class="material-icons">delete</i>
                     </button>

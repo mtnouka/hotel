@@ -15,6 +15,7 @@ class GuestResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'name' => $this->name,
             'document' => $this->document,
             'telephone' => $this->telephone,

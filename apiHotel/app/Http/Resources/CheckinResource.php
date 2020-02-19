@@ -60,6 +60,7 @@ class CheckinResource extends JsonResource
         $total = $this->handleStayValue();
 
         return [
+            'id' => $this->id,
             'entranceDate' => gmdate('Y-m-d\TH:i:s\Z'),
             'exitDate' => $this->exitDate,
             'aditionalVehicle' => $this->aditionalVehicle,

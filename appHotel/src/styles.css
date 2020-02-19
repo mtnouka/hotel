@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+@import '~material-icons/css/material-icons.min.css';
+@import '~material-icons/iconfont/material-icons.css';
+
 div .checkbox {
   margin: 40px 0 0 20px;
 }

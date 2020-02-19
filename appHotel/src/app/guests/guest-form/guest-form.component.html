@@ -1,33 +1,29 @@
-<!-- Botão de redirecionamento entre formulários -->
-<div class="form-redirect">
-    <a type="button" [routerLink]="['/checkins']" class="btn btn-primary save-button">Incluir check in</a>
-</div>
-
 <!-- Formulário de Hospede -->
 <div class="card-header form-header">
     <label for="hospede">Novo Hóspede</label>
 </div>
 
-<form class="col-md-12 form-border" name="formHospede">
+<form class="col-md-12 form-border" #guestForm="ngForm" *ngIf="guest">
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="nome">Nome completo</label>
-            <input type="text" class="form-control" id="nome" name="nome" required>
+            <label for="name">Nome completo</label>
+            <input name="name" [(ngModel)]="guest.name" #guestName="ngModel" type="text" class="form-control" id="name" required>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="document">Documento</label>
+            <input name="document" [(ngModel)]="guest.document" #guestDocument="ngModel" type="number" min="0" class="form-control" id="document" required>
+          </div>
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="documento">Documento</label>
-            <input type="number" min="0" class="form-control" id="documento" name="documento" required>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="telephone">Telefone</label>
+            <input name="telephone" [(ngModel)]="guest.telephone" #guestTelephone="ngModel" type="text" class="form-control" id="telephone" mask="(99)9999-9999"
+            pattern="[(][0-9]{2}[)][0-9]{4}[-][0-9]{4}" required>
         </div>
     </div>
 
-    <div class="row">
-        <div class="form-group col-md-6">
-            <label for="telefone">Telefone</label>
-            <input type="text" class="form-control" id="telefone" name="telefone" mask="(99)9999-9999"
-                pattern="[(][0-9]{2}[)][0-9]{4}[-][0-9]{4}" required>
-        </div>
-    </div>
-
-    <button name="submitHospede" type="submit" class="btn btn-primary save-button">Salvar</button>
+    <button class="btn btn-primary save-button mr-2">Salvar</button>
+    <a type="button" [routerLink]="['/guests']" class="btn btn-secondary">Voltar</a>
 </form>
